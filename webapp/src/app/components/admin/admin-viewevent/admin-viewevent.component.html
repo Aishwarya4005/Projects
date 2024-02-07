@@ -1,0 +1,116 @@
+<section>
+    <section class="ftco-section" style="
+    background-image: url('assets/adminvieweventbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 102vh;
+    background-attachment: fixed;"
+  >
+    <header>
+        <div class="logosec">
+            <div class="logo">EventManagemntSystem</div>
+            <img src="assets/eventlogo1.png" class="icn eventicn" id="eventicn" alt="event-icon">
+        </div>
+        <h4 style="margin-left: 70%"></h4>
+        <div class="dp">
+
+            <img src="assets/users1.png" class="dpicn" alt="dp">
+
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <a routerLink="/admin/home">
+                            <img src="assets/dashboard1.png" class="nav-img" alt="dashboard">
+                            <h3 style="margin-left: 20px">Dashboard</h3>
+                        </a>
+                    </div>
+                    <div class="option2 nav-option">
+                        <a routerLink="/admin/participant/veiwall">
+                            <img src="assets/participant1.png" class="nav-img" alt="articles">
+                            <h3 style="margin-left: 20px">Show Participant</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option3">
+                        <a routerLink="/admin/booking/veiwall">
+                            <img src="assets/booking1.png" class="nav-img" alt="report">
+                            <h3 style="margin-left: 20px">Show Booking</h3>
+                        </a>
+                    </div>
+                    <!-- <div class="nav-option option4">
+                        <a routerLink="/admin/payment/veiwall">
+                            <img src="assets/payments1.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Show Payments</h3>
+                        </a>
+                    </div> -->
+                    <div class="nav-option option5">
+                        <a routerLink="/admin/event">
+                            <img src="assets/event1.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Show Event</h3>
+                        </a>
+                    </div>
+                    <!-- <div class="nav-option option6">
+                        <a (click)="add-event()">
+                            <img src="assets/addevent1.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Add Event</h3>
+                        </a>
+                    </div> -->
+                    <div class="nav-option option7">
+                        <a (click)="logout()">
+                            <img src="assets/logout1.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Logout</h3>
+                        </a>
+                    </div>
+                    
+
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            <div class="title-container">
+                <h3>All Event</h3>
+            </div>
+            <div class="box-container">
+                
+                <div class="section-content section-content-p30">
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                          <table class='table'>
+                            <thead>
+                                <tr class='table-dark'>
+                                    <th>ID</th>
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                    <th>Image</th>
+                                    <!-- <th>Delete/Update</th> -->
+                                </tr>
+                        
+                            </thead>
+                            <tr *ngFor="let tempevent of event | paginate: { itemsPerPage: count, currentPage: p }">
+                                <td>{{tempevent.event_id}}</td>
+                                <td>{{tempevent.modelEventName}}</td>
+                                <td>{{tempevent.price}}</td>
+                                <td><img src="{{ tempevent.imagepath }}.jpg" alt="{{  tempevent.modelEventName }}" class="event-imagepath" style="height: 80px; width:150px;"></td>
+                                <!-- <td><button type="button" class="btn btn-md btn-danger" style="color: black;" (click) = "deleteEvent(tempevent.event_id)">Delete</button>&nbsp;&nbsp;
+                                <button type="button" class="btn btn-md btn-success" style="color: black;" (click)="updateEvent(tempevent.item_id)">Update</button>&nbsp;&nbsp;</td>
+             -->
+                            </tr>
+                        </table>  
+                        <div class="text-right mt-3" style="margin-top: 20px;">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                        </div>  
+                        </div>
+                        <!-- <button class="atu-btn-submit btn btn-info" (click) = "addMenu()" >Add Item</button> -->
+            
+                    </div>
+                </div>
+
+        </div>
+
+
+
+

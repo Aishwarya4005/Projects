@@ -1,0 +1,117 @@
+<section class="ftco-section" style="
+  background-image: url('assets/background1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-attachment: fixed;"
+>
+  <div class="container-fluid" style="padding: 20px">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+        <h2 class="heading-section" style="margin-top: 20px">
+          Welcome Admin Manager
+        </h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="login-wrap p-0" style="padding: 0%">
+          <h3 class="mb-4 text-center"><strong>Have an account?</strong></h3>
+          <form
+            #spForm="ngForm" 
+            (ngSubmit)="Getlogin()"
+            class="signin-form"
+            style="
+              padding: 12px 20px;
+              margin-bottom: 10px;
+              border-radius: 50%;
+            "
+          >
+            <div class="form-group" style="color: black;">
+              <label for="username">User Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username" 
+                [(ngModel)]="admin.username"
+                placeholder="Enter User Name"
+                required
+                minlength="5"
+                #username="ngModel" 
+              />
+             
+              <div class="error-message" *ngIf="spForm.controls['username'].hasError('required') && (spForm.controls['username'].dirty || spForm.controls['username'].touched)">
+                User Name is required.
+              </div>
+              <div class="error-message" *ngIf="spForm.controls['username'].hasError('minlength') && (spForm.controls['username'].dirty || spForm.controls['username'].touched)">
+                User Name must contain at least 5 characters.
+              </div>
+            </div>
+            <div class="form-group" style="color: black;">
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                [(ngModel)]="admin.userpassword"
+                placeholder="Enter password"
+                required
+                minlength="6"
+                #password="ngModel" 
+              />
+
+              <div class="error-message" *ngIf="spForm.controls['password'].hasError('required') && (spForm.controls['password'].dirty || spForm.controls['password'].touched)">
+                Password is required.
+              </div>
+              <div class="error-message" *ngIf="spForm.controls['password'].hasError('minlength') && (spForm.controls['password'].dirty || spForm.controls['password'].touched)">
+                Password must contain at least 6 characters.
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="form-control btn btn-primary submit px-3"
+              [disabled]="spForm.invalid"
+              style="
+                background-image: linear-gradient(
+                  to right,
+                  #5e5656 5%,
+                  black 100%
+                );
+                margin-top: 20px;
+              "
+            >
+              Login
+            </button>
+            <p class="bottom" style="color: rgb(255, 255, 255);">
+              Not an Admin..?
+              <a
+                class="bottom"
+                [routerLink]="['/participant/login']"
+                style="
+                  color: rgb(255, 255, 255);
+                  text-decoration: none;
+                  padding-left: 5px;
+                "
+              >
+                Click here
+              </a>
+            </p>
+            <p>
+              <a
+                class="bottom"
+                [routerLink]="['/']"
+                style="color: rgb(185, 94, 94);"
+              >
+                <strong>Back to Home....</strong>
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,62 @@
+<mat-toolbar color="white" class="mat-elevation-z8" style="margin-bottom: 10px;">
+    <div class="logo">
+      
+          <img src="assets/eventlogo1.png" alt="Event Logo" class="img-responsive">
+     
+  </div>
+  
+   
+     <div class="spacer"></div>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/home">Home</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/myprofile">My Profile</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/event">Event</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/mybookings">My Bookings</a>
+    <!-- <a mat-button style="margin-right: 10px;" routerLink="/participant/mypayment">My Payments</a> -->
+    <a mat-raised-button color="primary" (click)="logout()">Logout</a>
+   </mat-toolbar>
+   <div class="main-content" style="
+   background-image: url('assets/bookingbg.jpg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+    height: 50vh;
+    overflow: hidden;
+
+  ">
+    <div class="section-conatiner section-content-p30">
+        <div class="container-fluid">
+            <h2 class="text-center my-4">My Bookings</h2>
+            
+            <div class="row">
+                <table class="table table-striped table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th class="text-center">BookingID</th>
+                            <th class="text-center">Participant</th>
+                            <th class="text-center">Start Time</th>
+                            <th class="text-center">End Time</th>
+                            <th class="text-center">NoOfEvents</th>
+                            <th class="text-center">Total Amount</th>
+                            <th class="text-center">Status</th>
+                            <th class="text-center">modelEventName</th>
+                        </tr>
+                    </thead>
+                    <tr *ngFor="let tempbooking of booking | paginate: { itemsPerPage: count, currentPage: p }">
+                        <td class="text-center">{{ tempbooking.bookingId }}</td>
+                        <td class="text-center">{{ tempbooking.participants.username }}</td>
+                        <td class="text-center">{{ tempbooking.startTime }}</td>
+                        <td class="text-center">{{ tempbooking.eventDate }}</td>
+                        <td class="text-center">{{ tempbooking.noofevents }}</td>
+                        <td class="text-center">{{ tempbooking.amount }}</td>
+                        <td class="text-center">{{ tempbooking.status }}</td>
+                        <td class="text-center">{{ tempbooking.event.modelEventName}}   </td>
+                    </tr>
+                </table>
+                <div class="text-right mt-3">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

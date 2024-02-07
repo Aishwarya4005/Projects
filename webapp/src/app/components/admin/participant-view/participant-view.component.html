@@ -1,0 +1,109 @@
+<section>
+    <section class="ftco-section" style="
+  background-image: url('assets/participantviewbg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 102vh;
+  background-attachment: fixed;"
+>
+
+    <header>
+        <div class="logosec">
+            <div class="logo">EventManagementSystem</div>
+            <img src="assets/eventlogo1.png" class="icn eventicn" id="eventicn" alt="event-icon">
+        </div>
+        <h4 style="margin-left: 70%"></h4>
+        <div class="dp">
+
+            <img src="assets/users1.png" class="dpicn" alt="dp">
+
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <a routerLink="/admin/home">
+                            <img src="assets/dashboard1.png" class="nav-img" alt="dashboard">
+                            <h3 style="margin-left: 20px">Dashboard</h3>
+                        </a>
+                    </div>
+                    <div class="option2 nav-option">
+                        <a routerLink="/admin/participant/veiwall">
+                            <img src="assets/participant1.png" class="nav-img" alt="articles">
+                            <h3 style="margin-left: 20px">Show participant</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option3">
+                        <a routerLink="/admin/booking/veiwall">
+                            <img src="assets/booking1.png" class="nav-img" alt="report">
+                            <h3 style="margin-left: 20px">Show Booking</h3>
+                        </a>
+                    </div>
+                    <!-- <div class="nav-option option4">
+                        <a routerLink="/admin/payment/veiwall">
+                            <img src="assets/payments1.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Show Payments</h3>
+                        </a>
+                    </div> -->
+                    <div class="nav-option option5">
+                        <a routerLink="/admin/event">
+                            <img src="assets/event1.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Show Event</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option6">
+                        <a (click)="logout()">
+                            <img src="assets/logout1.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Logout</h3>
+                        </a>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            <div class="title-container">
+                <h3>All Participant</h3>
+            </div>
+            <div class="box-container">
+
+                <div class="section-content section-content-p30 ">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <table  class='table table-curved'>
+                                <thead>
+                                    <tr class='table-dark'>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>ContactNo</th>
+                                        <th>Username</th>
+                                        <!-- <th>Delete</th> -->
+                                    </tr>
+
+                                </thead>
+                                <tr
+                                    *ngFor="let tempcust of participant | paginate: { itemsPerPage: count, currentPage: p }">
+                                    <td>{{tempcust.participantId}}</td>
+                                    <td>{{tempcust.name}}</td>
+                                    <td>{{tempcust.contactno}}</td>
+                                    <td>{{tempcust.username}}</td>
+                                    <!-- <td><button type="button" class="btn btn-md btn-danger" style="color: black;"
+                                    (click)="deleteParticipant(tempcust.participantId)">Delete</button></td> -->
+
+                                </tr>
+                            </table>
+                            <div class="text-right mt-3">
+                                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+

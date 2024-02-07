@@ -1,0 +1,77 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <span><mat-icon>eco</mat-icon> Event</span>
+    <div class="spacer"></div>
+    <a mat-button routerLink="/participant/home">Home</a>
+    <a mat-button routerLink="/participant/myprofile">My Profile</a>
+    <a mat-button routerLink="/participant/event">Event</a>
+    <a mat-button routerLink="/participant/mybookings">My Bookings</a>
+    <!-- <a mat-button routerLink="/participant/mypayment">My Payments</a> -->
+    <a mat-raised-button color="accent" (click)="logout()">Logout</a>
+  </mat-toolbar>
+  
+  <div class="main-content" style="
+    background-image: url('assets/eventbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px">
+    <div class="section-content section-content-p30">
+      <div class="container-fluid">
+        <h2 class="text-center my-4">Events</h2>
+  
+        <div class="row">
+          <table class="table table-bordered table-striped">
+            <thead class="table-dark">
+                <tr class='table-dark'>
+                    <th>Event_Id</th>
+                    <th>Event Name</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>BookingEvent</th>
+                </tr>
+        
+            </thead>
+            <tr *ngFor="let tempevent of event | paginate: { itemsPerPage: count, currentPage: p }">
+                <td>{{tempevent.event_id}}</td>
+                <td>{{tempevent.modelEventName}}</td>
+                <td>{{tempevent.price}}</td>
+                <td><img src="{{ tempevent.imagepath }}.jpg" alt="{{  tempevent.modelEventName }}" class="event-imagepath" style="height: 80px; width:150px;"></td>
+                <td><button class="atu-btn-submit" (click)="bookingEvent(tempevent.event_id)">BookingEvent</button>
+
+            </tr>
+              <!-- <tr>
+                <th class="text-center">Event_Id</th>
+                <th class="text-center">Event Name</th>
+                <th class="text-center">Image</th>
+                <th class="text-center">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let tempevent of event | paginate : { itemsPerPage: count, currentPage: p }">
+                <td class="text-center">{{ tempevent.event_id }}</td>
+                <td class="text-center">{{ tempevent.modelEventName }}</td>
+                <td class="text-center">{{ tempevent.imagepath }}</td>
+                <td class="text-center">{{ tempevent.price }}</td>
+              </tr> -->
+            <!-- </tbody> -->
+          </table>
+        </div>
+  
+        <!-- <div class="row">
+          <div class="col-md-4" *ngFor="let tempevent of event | paginate : { itemsPerPage: count, currentPage: p }">
+            <div class="event-container">
+              <img src="{{ tempevent.imagepath }}.jpg" alt="{{ tempevent.modleEventName }}" class="event-image">
+              <h4 class="event-item">{{ tempevent.modelEventName }}</h4>
+              <p class="event-price">{{ tempevent.price }} ₹</p>
+              <button class="atu-btn-submit" (click)="bookingEvent(tempevent.event_id)">Event</button>
+            </div>
+          </div>
+        </div> -->
+  
+        <div class="pagination-controls">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+  

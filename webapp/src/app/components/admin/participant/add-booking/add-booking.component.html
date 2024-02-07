@@ -1,0 +1,52 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+    <span><mat-icon>eco</mat-icon> Event</span>
+    <div class="spacer"></div>
+    <a mat-button routerLink="/participant/home">Home</a>
+    <a mat-button routerLink="/participant/myprofile">My Profile</a>
+    <a mat-button routerLink="/participant/event">Event</a>
+    <a mat-button routerLink="/participant/myorders">My Bookings</a>
+    
+    <a mat-raised-button color="accent" (click)="logout()">Logout</a>
+  </mat-toolbar>
+  <div style="
+  background-image: url('assets/eventbg2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically center the container */
+  height: 91.3vh; /* Set the height of the container to fill the viewport */
+  overflow: hidden;
+  background-attachment: fixed;
+  ">
+  
+  
+  <div class="main-content" >
+    <div>
+      <div class="container-fluid">
+          <div class="content" style="margin-right: 500px;margin-bottom: 100px">
+            <div >
+              
+                  <div class="event-container" style="height: 140px ; width: 140px;">
+                    <img  class="event-image" style="margin-top: 20px; border-radius: 10px;" src="{{event.imagepath}}.jpg" alt="{{ event.modelEventName }}">
+                    <h4 class="event-item"><strong>{{ event.modelEventName }}</strong> </h4>
+                    <p class="event-price"><strong>{{ event.price }} ₹</strong> </p>
+                  <form >
+                    <div class="form-group">
+                      <label for="quantity"><strong>NoOfEvents</strong></label>
+                      <div class="input-container">
+                        <input type="number" id="noofevents" name="noofevents" class="form-control" [(ngModel)]="noofevents" required min="1">
+                      </div>
+                    </div>
+                    <!-- Example binding in your template -->
+<button type="button" class="booking-button" (click)="placeBooking()">Booking</button>
+
+                  </form>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

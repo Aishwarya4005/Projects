@@ -1,0 +1,71 @@
+<mat-toolbar color="white" class="mat-elevation-z8" style="margin-bottom: 10px;">
+    <div class="logo">
+      
+          <img src="assets/eventlogo1.png" alt="Event Logo" class="img-responsive">
+     
+  </div>
+  
+   
+     <div class="spacer"></div>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/home">Home</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/myprofile">My Profile</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/event">Event</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/mybookings">My Bookings</a>
+   
+    <a mat-raised-button color="primary" (click)="logout()">Logout</a>
+   </mat-toolbar>
+<div class="main-container" style="
+background-image: url('assets/wel.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+height: 90vh;
+overflow: hidden;">
+<div class="container d-flex justify-content-center align-items-center" style="padding-bottom: 10%;" >
+             
+    <div class="card">
+
+     <div class="upper">
+
+       <img src="https://i.imgur.com/Qtrsrk5.jpg" class="img-fluid">
+       
+     </div>
+
+     <div class="user text-center">
+
+       <div class="profile">
+
+         <img src="assets/users1.png" class="rounded-circle" width="80">
+         
+       </div>
+
+     </div>
+
+
+     <div class="mt-5 text-center">
+
+       <h4 class="mb-0">{{ participant.participantId }}</h4>
+       <!-- <span class="text-muted d-block mb-2">@{{ participant.username }}</span> -->
+       <span class="text-muted d-block mb-2" *ngIf="participant && participant.username">{{ participant.username }}</span>
+
+       <span class="text-muted d-block mb-2">{{ participant.email }}</span>
+       <span class="text-muted d-block mb-2">+91 {{ participant.contactno }}</span>
+       
+
+
+       <div class="d-flex justify-content-between align-items-center mt-4 px-4">
+
+         <div class="stats">
+          
+           <span> <button class="btn btn-primary btn-sm follow" routerLink="/participant/mybookings">My Bookings</button></span>
+
+         </div>
+        </div>
+       
+     </div>
+      
+    </div>
+
+  </div>
+</div>

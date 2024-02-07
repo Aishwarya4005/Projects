@@ -1,0 +1,121 @@
+.menu-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.menu-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    padding-top:10px;
+    min-height:10vh
+}
+
+.menu-image {
+    max-width: 100%;
+    max-height: 150px; 
+    height: auto;
+}
+
+.menu-item {
+    margin-top: 10px;
+}
+
+.menu-price {
+    color: green;
+    font-weight: bold;
+}
+.spacer {
+    flex: 1 1 auto;
+  }
+    
+
+  .atu-btn-submit {
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .atu-btn-submit:hover {
+    background-color: #3b4c6f;
+  }
+  .table{
+    margin:0
+    }
+    
+    .centered-table {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh; /* Adjust as needed */
+    }
+    table.table.table-bordered{
+    border:1px solid #ccc;
+    background:#fff
+    }
+    .table-bordered td,.table-bordered th{
+    border:1px solid #dee2e6
+    }
+    table.table.table-bordered th{
+    BACKGROUND:#0da8e4;
+    color:#fff;
+    font-size:14px;
+    padding:7px
+    }
+    .table-responsive{
+    padding-right:10px
+    }
+    th {
+      background-color: #000000;
+      border: 2px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    td {  
+      border: 2px solid #ccc;
+      padding: 8px;
+      text-align: center;
+      font-size: x-large;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .items select{
+    width:100px;
+    height:40px;
+    border-radius:40px;
+    padding-left:15px;
+    margin-bottom:10px;
+    outline:0;
+    margin-left:5px
+    }
+    .my-4 {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    .text-center {
+        text-align: center;
+    }
+    
+    .text-right {
+        text-align: right;
+    }
+    .my-4 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+        font-style:serif fonts;
+    }    
+    
+
+.my-4[_ngcontent-ng-c1136178129] {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: var(--bs-heading-color);
+    font-size: 170px;
+}

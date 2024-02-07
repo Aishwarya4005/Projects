@@ -1,0 +1,111 @@
+<section>
+    <section class="ftco-section" style="
+  background-image: url('assets/bookingeventbg1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 102vh;
+  background-attachment: fixed;"
+>
+    <header>
+        <div class="logosec">
+            <div class="logo">EventManagemntSystem</div>
+            <img src="assets/eventlogo1.png" class="icn eventicn" id="icn"event alt="event-icon">
+        </div>
+        <h4 style="margin-left: 70%"></h4>
+        <div class="dp">
+
+            <img src="assets/users1.png" class="dpicn" alt="dp">
+
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <a routerLink="/admin/home">
+                            <img src="assets/dashboard1.png" class="nav-img" alt="dashboard">
+                            <h3 style="margin-left: 20px">Dashboard</h3>
+                        </a>
+                    </div>
+                    <div class="option2 nav-option">
+                        <a routerLink="/admin/participant/veiwall">
+                            <img src="assets/participant1.png" class="nav-img" alt="articles">
+                            <h3 style="margin-left: 20px">Show Participant</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option3">
+                        <a routerLink="/admin/booking/veiwall">
+                            <img src="assets/booking1.png" class="nav-img" alt="report">
+                            <h3 style="margin-left: 20px">Show Booking</h3>
+                        </a>
+                    </div>
+                  
+                    <div class="nav-option option5">
+                        <a routerLink="/admin/event">
+                            <img src="assets/event1.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Show Event</h3>
+                        </a>
+                    </div>
+                    <div class="nav-option option6">
+                        <a (click)="logout()">
+                            <img src="assets/logout1.png" class="nav-img" alt="institution">
+                            <h3 style="margin-left: 20px">Logout</h3>
+                        </a>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <div class="main">
+            <div class="title-container">
+                <h3>All Booking</h3>
+            </div>
+            <div class="box-container">
+                
+                <div class="section-content section-content-p30">
+                    <div class="container-fluid">
+                        
+                        <div class="row">
+                          <table class='table'>
+                            <thead>
+                                <tr class='table-dark'>
+                                    <th class="center" >BookingID</th>
+                                    <th class="center">Participant</th>
+                                    <th class="center">Start Time</th>
+                                    <th class="center">End Time</th>
+                                    <th class="center">Event_Id</th>
+                                    <th class="center">NoOfEvents</th>
+                                    <th class="center">Amount</th>
+                                    <th class="center">Status</th>
+                                    <th>Delete</th>
+                                    
+                                </tr>
+                        
+                            </thead>
+                            <tr *ngFor="let tempbooking of booking  | paginate: { itemsPerPage: count, currentPage: p }">
+                                <td class="center">{{tempbooking.bookingId}}</td>
+                                <td class="center">{{tempbooking.participants.username}}</td>
+                                <td class="center">{{tempbooking.eventDate}}</td>
+                                <td class="center">{{tempbooking.startTime}}</td>
+                                <td class="center">{{tempbooking.event.event_id}}</td>
+                                <td class="center">{{tempbooking.noofevents}}</td>
+                                <td class="center">{{tempbooking.amount}}</td>
+                                <td class="center">{{tempbooking.status}}</td>
+                                <td class="center">
+                                    <!-- <button type="button" class="btn btn-md" style="background-color: rgb(14, 13, 13); color: white;" (click)="deleteBooking(tempbooking.bookingId)">Delete</button> -->
+
+                                    <button type="button" class="btn btn-md btn-danger" style="color: black;" (click)="deleteBooking(tempbooking.bookingId)">Delete</button>
+                                </td>
+                            </tr>
+                        </table> 
+                        <div class="text-right" style="padding-top: 20px;">
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                            </div>
+                              
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>

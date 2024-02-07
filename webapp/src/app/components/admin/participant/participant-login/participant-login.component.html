@@ -1,0 +1,112 @@
+
+<section class="ftco-section" style="
+  background-image: url('assets/participantloginbg2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh ;
+  background-attachment: fixed;"
+>
+  <div class="container-fluid" style="padding-top: 90px;">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+        <h2 class="heading-section" style="margin-top: 20px">
+          <strong>Welcome to Event Management System</strong>
+        </h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="login-wrap p-0" style="padding: 0%">
+          <form
+            form #spForm="ngForm"
+            (ngSubmit)="Getlogin()"
+            class="signin-form"
+            style="
+              padding: 12px 20px;
+              margin-bottom: 10px;
+              border-radius: 50%;
+            "
+          >
+            <div class="form-group" style="color: black;">
+              <label for="username">User Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="User Name"
+                [(ngModel)]="participant.username"
+                placeholder="Enter User Name"
+                minlength="5"
+                required
+              />
+            
+              <div class="error-message" *ngIf="spForm.controls['User Name']?.invalid && (spForm.controls['User Name']?.dirty || spForm.controls['User Name']?.touched)">
+                <div *ngIf="spForm.controls['User Name']?.errors?.['required']">User Name is required.</div>
+                <div *ngIf="spForm.controls['User Name']?.errors?.['minlength']">User Name must contain at least 5 characters.</div>
+            </div>
+            
+            </div>
+            <div class="form-group" style="color: black;">
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                [(ngModel)]="participant.password"
+                placeholder="Enter password"
+                minlength="6"
+                required
+              />
+             
+              <div class="error-message" *ngIf="spForm.controls['password']?.invalid && (spForm.controls['password']?.dirty || spForm.controls['password']?.touched)">
+                <div *ngIf="spForm.controls['password']?.errors?.['required']">Password is required.</div>
+                <div *ngIf="spForm.controls['password']?.errors?.['minlength']">Password must contain at least 6 characters.</div>
+            </div>
+            
+            </div>
+            <button
+              type="submit"
+              class="form-control btn btn-primary submit px-3"
+              [disabled]="!spForm.valid"
+              style="
+                background-image: linear-gradient(
+                  to right,
+                  #5e5656 5%,
+                  black 100%
+                );
+                margin-top: 5px;
+              "
+            >
+              Login
+            </button>
+            <p class="bottom" style="color: black;">
+              Don't have an account?
+              <a
+                class="bottom"
+                [routerLink]="['/participant/signup']"
+                style="
+                  color: black;
+                  text-decoration: none;
+                  padding-left: 5px;
+                "
+              >
+                Register here
+              </a>
+            </p>
+            <p>
+              <a
+                class="bottom"
+                [routerLink]="['/']"
+                style="color: rgb(185, 94, 94);"
+              >
+                <button type="button"><strong>Back to Home....</strong></button>
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

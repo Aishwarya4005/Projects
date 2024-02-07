@@ -1,0 +1,74 @@
+
+<mat-toolbar color="white" class="mat-elevation-z8" style="margin-bottom: 10px;">
+    <div class="logo">
+      
+          <img src="assets/eventlogo1.png" alt="Event Logo" class="img-responsive">
+     
+  </div>
+  
+   
+     <div class="spacer"></div>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/home">Home</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/myprofile">My Profile</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/event">Event</a>
+    <a mat-button style="margin-right: 10px;" routerLink="/participant/mybookings">My Bookings</a>
+  
+    <a mat-raised-button color="primary" (click)="logout()">Logout</a>
+   </mat-toolbar>
+     
+  
+      <div style="
+      background-image: url('assets/participanthomebg1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      height: 100vh;
+     "> <div class="title_text" style="margin-bottom: 1%; ">
+        <h1 style="font-family:Arial, Helvetica, sans-serif;">Welcome <strong>{{participant.name}}</strong></h1>
+        <br>
+        <p>Select Services</p>
+      </div>
+        <div class="row">
+          <div class="column" style="margin-left: 15%; margin-right: 30px;">
+            <div class="container2" id="image1">
+              <a routerLink="/participant/event" style="text-decoration: none; color: inherit;">
+                <img src="assets/event1.png" style="width: 400px; height: 200px"/>
+                <div class="overlay">
+                  <div class="text1">
+                    <p>Click for Menu <span id="total_oldsoe"></span></p>
+                    
+                  </div>
+                </div>
+                <div class="text">
+                  <p>Events</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+
+          
+          <div class="column" style="margin-left: 30px; margin-right: 15%;">
+            <div class="container2" id="image2">
+              <a routerLink="/participant/mybookings" style="text-decoration: none; color: inherit;">
+                <img src="assets/booking1.png" style="width: 400px; height: 200px"/>
+                <div class="overlay">
+                  <div class="text1">
+                    <p>Bookings <span id="total"></span></p>
+                   
+                  </div>
+                </div>
+                <div class="text">
+                  <p>Bookings</p>
+                </div>
+              </a>
+            </div>
+          </div>
+  
+         
+          
+        </div>
+      </div>
+  
+    

@@ -1,0 +1,41 @@
+<section id="banner">
+  <!-- <section class="ftco-section" style="
+  background-image: url('assets/welcomebg.jpg');
+  background-size: cover;"
+> -->
+
+
+    <!-- <mat-toolbar _ngcontent-ng-c1578240431 color="white" class="mat-elevation-z8 mat-white mat-toolbar-single-row" style="margin-bottom: 10px;" ng-reflect-color="white"> -->
+      <mat-toolbar color="white" class="mat-elevation-z8" style="margin-bottom: 10px;">
+
+      <div class="logo" style="margin-top: 20px;">
+        
+            <img src="assets/eventlogo1.png" alt="Event Logo" class="img-responsive">
+       
+    </div>
+    
+     
+       
+      <a mat-raised-button color="primary" routerLink="/admin/login" style="margin-left: 20px;padding: auto;">Admin Login</a>
+      <div class="spacer"></div>
+      <a mat-raised-button color="primary" routerLink="/participant/login">Login</a>
+     </mat-toolbar>
+      
+      <div id="banner-text"  style="
+      background-image: url('assets/welcomebg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 140px">
+        <h1 style="margin-left: 60px;">Event Management System</h1>
+        <p style="margin-top: 80px;">Just the way you wanted</p>
+        <div class="b_button">
+          <a [routerLink]="['/participant/login']"><span></span>Booking Event</a>
+          <div class="b_button">
+            <a [routerLink]="['/participant/login']">
+              <button>Try it out</button>
+            </a>
+          </div>
+        </div>
+      </div>
+   </section> 
